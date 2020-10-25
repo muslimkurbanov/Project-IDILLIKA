@@ -8,10 +8,11 @@
 import Foundation
 
 struct Menu: Decodable {
-    var brand : String?
-    var imageLink: String?
-    var title: String?
-    var price: Int?
-    var favorite: Bool?
-    var id: Int?
+    var brand : String
+    var imageLink: String
+    var title: String
+    var price: Int
+    var favorite: Bool
+    var id: Int
+    var count: Int? = 0
 }

@@ -24,16 +24,16 @@ class ViewController: UIViewController {
     }
     
     var presenter: ViewPresetnerProtocol!
-    private let favoriteManager = CartManager.shared
+    private let cartManager = CartManager.shared
     
-    var itemMenuArray: [Menu] = {
-        var blankMenu = Menu()
-        blankMenu.brand = "CocaCola"
-        blankMenu.imageLink = "cola"
-        print("blankMenu")
-        return [blankMenu]
-        
-    }()
+//    var itemMenuArray: [Menu] = {
+//        var blankMenu = Menu()
+//        blankMenu.brand = "CocaCola"
+//        blankMenu.imageLink = "cola"
+//        print("blankMenu")
+//        return [blankMenu]
+//        
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,17 +48,17 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return itemMenuArray.count
+        return searchResponse.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as? CollectionViewCell {
-            
-            itemCell.menu = itemMenuArray[indexPath.row]
-            return itemCell
-        }
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! CollectionViewCell
+        let item = searchResponse[indexPath.row]
+        let count = cartManager.getDishCount(by: item.id ?? 0)
+        cell.configurate(with: item, delegate: self)
+        
+        return cell
     }
     
     
@@ -67,11 +67,22 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 extension ViewController: ViewProtocol {
     func applyData(model: [Menu]) {
         searchResponse.append(contentsOf: model)
-
     }
     
     func failure(error: Error) {
         print(error.localizedDescription)
+    }
+}
+
+extension ViewController: MenuCollentionViewCellDelegate {
+    func orderAdded(_ order: Menu) {
+        guard cartManager.dishesIds.count < 2 else { return }
+
+    }
+    
+    func orderDeleted(_ order: Menu) {
+        guard cartManager.dishesIds.count == 0 else { return }
+
     }
     
     

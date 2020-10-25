@@ -16,7 +16,7 @@ protocol NetworkServiceProtocol {
 class NetworkService: NetworkServiceProtocol {
     func getMenu(complletion: @escaping (Result<[Menu]?, Error>) -> Void) {
         
-        let urlString = "https://peretz-group.ru/api/v2/products?category=51&key=47be9031474183ea92958d5e255d888e47bdad44afd5d7b7201d0eb572be5278"
+        let urlString = "https://idillika.com/api/catalogList.php?section=21&session_id=f3e82db3d0b2bcce07eae17dd9cb46d3"
         
         AF
             .request(urlString, method: .get, parameters: nil)
