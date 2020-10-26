@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="300" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="  ПОКАЗАТЬ ТОАВРЫ" image="arrow.right" catalog="system">
+                                <state key="normal" title="  ПОКАЗАТЬ ТОАВРЫ" image="arrow-right">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -96,7 +96,7 @@
                                                     <rect key="frame" x="158" y="295" width="25" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" backgroundImage="heart" catalog="system"/>
+                                                    <state key="normal" backgroundImage="heart"/>
                                                 </button>
                                             </subviews>
                                         </collectionViewCellContentView>
@@ -123,7 +123,14 @@
                             <constraint firstItem="YXV-9C-cHU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bWK-ZR-nw0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zrV-md-Shr"/>
+                    <navigationItem key="navigationItem" id="zrV-md-Shr">
+                        <barButtonItem key="backBarButtonItem" title="КОРЗИНА" id="7th-dd-b64"/>
+                        <barButtonItem key="rightBarButtonItem" image="bag" id="tzR-AQ-Ogu">
+                            <connections>
+                                <segue destination="C5S-DM-epv" kind="show" id="YRh-nv-0gb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="YXV-9C-cHU" id="apO-JH-hDn"/>
                     </connections>
@@ -132,12 +139,68 @@
             </objects>
             <point key="canvasLocation" x="1360.8695652173915" y="102.45535714285714"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="LPL-Lm-peo">
+            <objects>
+                <viewController id="C5S-DM-epv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kwy-UK-RoK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="2nD-0I-uKK">
+                                <rect key="frame" x="107" y="250" width="200" height="165"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ой, пусто!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-zg-fop">
+                                <rect key="frame" x="164" y="447" width="87" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Yc-S4-u1R">
+                                <rect key="frame" x="56" y="482" width="303" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Ваша корзина пока пуста, добавьте
+понравившийся товар.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gx-KX-7m1">
+                                <rect key="frame" x="36" y="761" width="343" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="300" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="  НАЧАТЬ ПОКУПКИ" image="arrow-right">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JVm-cn-XXA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JVm-cn-XXA" firstAttribute="trailing" secondItem="2nD-0I-uKK" secondAttribute="trailing" constant="107" id="aPS-z1-rg2"/>
+                            <constraint firstItem="2nD-0I-uKK" firstAttribute="top" secondItem="JVm-cn-XXA" secondAttribute="top" constant="110" id="gUc-YI-jhZ"/>
+                            <constraint firstItem="JVm-cn-XXA" firstAttribute="bottom" secondItem="2nD-0I-uKK" secondAttribute="bottom" constant="447" id="jFq-3g-QR2"/>
+                            <constraint firstItem="2nD-0I-uKK" firstAttribute="leading" secondItem="JVm-cn-XXA" secondAttribute="leading" constant="107" id="mBG-w6-Y3x"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="s8S-Lf-sb5">
+                        <barButtonItem key="rightBarButtonItem" image="remove" id="xle-02-CfB"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Fa-zB-8HL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2139.130434782609" y="101.78571428571428"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="14I-JV-g5j">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2yS-bw-e9o" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="arrowLeft" largeTitles="YES" backIndicatorTransitionMaskImage="arrowLeft" id="5pV-zq-fdF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="arrow-left" largeTitles="YES" backIndicatorTransitionMaskImage="arrow-left" id="5pV-zq-fdF">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
@@ -156,9 +219,12 @@
     </scenes>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="arrow.right" catalog="system" width="128" height="98"/>
-        <image name="arrowLeft" width="20" height="18"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="arrow-left" width="24" height="24"/>
+        <image name="arrow-right" width="19" height="11.333333015441895"/>
+        <image name="bag" width="24" height="24"/>
+        <image name="cart" width="160" height="134"/>
+        <image name="heart" width="19.333333969116211" height="16.333333969116211"/>
+        <image name="remove" width="18" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
