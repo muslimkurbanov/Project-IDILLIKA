@@ -55,7 +55,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! CollectionViewCell
         let item = searchResponse[indexPath.row]
-        let count = cartManager.getDishCount(by: item.id ?? 0)
+        let count = cartManager.getDishCount(by: item.id) ?? 0
         cell.configurate(with: item, delegate: self)
         
         return cell

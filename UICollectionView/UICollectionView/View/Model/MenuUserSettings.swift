@@ -36,18 +36,6 @@ class CartManager {
         defaults.set(encodedData, forKey: menuKey)
     }
     
-    func minusDishes(_ id: Int) {
-        var dishesCopy = dishesIds
-        if dishesCopy[id] != nil {
-            dishesCopy[id]! -= 1
-            
-            if dishesCopy[id]! == 0 {
-                dishesCopy[id] = nil
-            }
-        }
-        
-        let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: dishesCopy, requiringSecureCoding: false)
-        defaults.set(encodedData, forKey: menuKey)
-    }
+    
 }
 

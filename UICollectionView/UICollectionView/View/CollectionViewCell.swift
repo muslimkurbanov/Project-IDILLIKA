@@ -20,6 +20,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var selectButton: UIButton!
     
     var presenter: ViewPresetnerProtocol!
     var searchResponce: [Menu]? = nil
@@ -31,7 +32,8 @@ class CollectionViewCell: UICollectionViewCell {
     func configurate(with model: Menu, delegate: MenuCollentionViewCellDelegate) {
         self.order = model
         self.delegate = delegate
-        order?.count = cartManager.getDishCount(by: model.id) ?? 0
+    
+        
         nameLabel.text = model.brand
         priceLabel.text = "\(model.price) ₽"
         titleLabel.text = model.title
@@ -39,7 +41,17 @@ class CollectionViewCell: UICollectionViewCell {
         
     }
 
-//    var menu: Menu? {
+    @IBAction func addToCartButton(_ sender: Any) {
+    
+        if selectButton.isSelected == false {
+            
+            selectButton.isSelected = true
+
+        } else {
+            selectButton.isSelected = false
+        }
+    }
+    //    var menu: Menu? {
 //        didSet {
 //            nameLabel.text = menu?.brand
 //            if let image = menu?.imageLink {

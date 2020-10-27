@@ -10,6 +10,7 @@
 		669AC36BE5135323F3C55D4A /* Pods_UICollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461A658F3177071B54A4ED2D /* Pods_UICollectionView.framework */; };
 		844A77272545AE8F00FF03B1 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A77262545AE8F00FF03B1 /* MainPresenter.swift */; };
 		844A77312545B74500FF03B1 /* MenuUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A77302545B74500FF03B1 /* MenuUserSettings.swift */; };
+		844FB3ED25486CE000DE504A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844FB3EC25486CE000DE504A /* CartViewController.swift */; };
 		846D041E25433D4400CA7558 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846D041D25433D4400CA7558 /* NetworkService.swift */; };
 		84BCFE2B2541B5660070AA51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BCFE2A2541B5660070AA51 /* AppDelegate.swift */; };
 		84BCFE2D2541B5660070AA51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BCFE2C2541B5660070AA51 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 		461A658F3177071B54A4ED2D /* Pods_UICollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UICollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844A77262545AE8F00FF03B1 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		844A77302545B74500FF03B1 /* MenuUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUserSettings.swift; sourceTree = "<group>"; };
+		844FB3EC25486CE000DE504A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		846D041D25433D4400CA7558 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		84BCFE272541B5660070AA51 /* UICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BCFE2A2541B5660070AA51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				84BCFE2E2541B5660070AA51 /* ViewController.swift */,
 				84BCFE3F2541B6B90070AA51 /* CollectionViewCell.swift */,
+				844FB3EC25486CE000DE504A /* CartViewController.swift */,
 				84BCFE472541B7EA0070AA51 /* Model */,
 			);
 			path = View;
@@ -259,6 +262,7 @@
 				84BCFE402541B6B90070AA51 /* CollectionViewCell.swift in Sources */,
 				846D041E25433D4400CA7558 /* NetworkService.swift in Sources */,
 				844A77312545B74500FF03B1 /* MenuUserSettings.swift in Sources */,
+				844FB3ED25486CE000DE504A /* CartViewController.swift in Sources */,
 				84BCFE2D2541B5660070AA51 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

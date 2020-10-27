@@ -15,4 +15,5 @@ struct Menu: Decodable {
     var favorite: Bool
     var id: Int
     var count: Int? = 0
+    var state: Bool? = false
 }
